@@ -9,21 +9,25 @@ import UIKit
 
 final class ResultViewController: UIViewController {
 
+    // MARK: - IBOutlets
     @IBOutlet var youLabel: UILabel!
     @IBOutlet var yourDescriptionLabel: UILabel!
     
-    
+    // MARK: - Public properties
     var answersChosen: [Answer]!
     
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.setHidesBackButton(true, animated: true)
         let chosenAnimal = numberOfResponses(answersChosen)
         youLabel.text = "Вы - \(chosenAnimal.rawValue)"
         yourDescriptionLabel.text = chosenAnimal.definition
+        
+        navigationItem.setHidesBackButton(true, animated: true)
     }
     
+    // MARK: - IB Action
     @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
         dismiss(animated: true)
     }
