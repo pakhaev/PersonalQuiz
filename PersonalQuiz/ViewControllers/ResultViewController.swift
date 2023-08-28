@@ -54,13 +54,6 @@ private extension ResultViewController {
                     numberOfResponses[animal]! += 1
                 }
                 
-                /*
-                 Вопрос: тут лучше использовать извлечение опционала через guard
-                 или же с принудительным извлечение работать (т.к. если второе условие
-                 проходит, то точно есть значение с таким ключом), исходя из того,
-                 что в двух местах дальше юзается опциональное значение?
-                */
-                
                 if numberOfResponses[animal]! > max {
                     max = numberOfResponses[animal]!
                     resultAnimal = animal
